@@ -32,14 +32,15 @@ services:
         image: mysql:5.7.22
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: ${DB_DATABASE:-laravel}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+            MYSQL_DATABASE: ${DB_DATABASE:-laravel} # If enviroments not set, default value is laravel
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root} # If enviroments not set, default value is root
             MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
             MYSQL_USER: ${DB_USERNAME:-username}
         volumes:
             - ./.docker/mysql/dbdata:/var/lib/mysql
         ports:
-            - "3388:3306"
+            - "3388:3306" # If you want to change port, you can change here
+                          # Port 3388 is the port of host machine, port 3306 is the port of container
         networks:
             - laravel
 
@@ -56,7 +57,7 @@ services:
         networks:
             - laravel
 
-    # redis
+    # redis Service of cache in memory
     redis:
         image: redis:latest
         networks:
