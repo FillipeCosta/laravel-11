@@ -32,7 +32,7 @@ services:
         image: mysql:5.7.22
         restart: unless-stopped
         environment:
-            MYSQL_DATABASE: ${DB_DATABASE:-laravel} # If enviroments not set, default value is laravel
+            MYSQL_DATABASE: ${DB_DATABASE:-athena} # If enviroments not set, default value is laravel
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root} # If enviroments not set, default value is root
             MYSQL_PASSWORD: ${DB_PASSWORD:-userpass}
             MYSQL_USER: ${DB_USERNAME:-username}
