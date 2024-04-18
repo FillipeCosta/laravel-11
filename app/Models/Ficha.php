@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FFuncional extends Model
+class Ficha extends Model
 {
+    protected $table = 'cidade';
+
     use HasFactory;
 }
