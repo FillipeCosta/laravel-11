@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class FichaController extends Controller
 {
     public function index(){
-        $allFicha = Ficha::all();
-        dd($allFicha);
-        return view('fCadastral');
+        $cidades = Ficha::all();
+
+        return view('fCadastral', compact('cidades'));
     }
 
     public function createFCadastro(){
@@ -19,14 +19,8 @@ class FichaController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        Ficha::create($request->all());
 
-        Ficha::create([
-            $request->idCidade,
-            $request->idEstado,
-            $request->nome
-        ]);
-
-        return view('ficha.index');
+        return redirect()->route('ficha.index'); // redireciona para a rota de listagem
     }
 }
