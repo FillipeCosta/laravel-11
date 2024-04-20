@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: #1f2937;
+    border-radius: 5px;
+    padding: 50px !important;
+    margin: 50px;
+}
+
+input{
+    background-color: #111827 !important;
+    border: 1px solid #1f2937 !important;
+}
+
+::placeholder{
+    color: #f1f1f1 !important;
+}
+
+.ct-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px !important;
+}
