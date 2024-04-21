@@ -65,7 +65,7 @@
                 <h2>ATHENA</h2>
             </div>
             <div class="col-12 menu">
-                <a href="{{ route('ficha.createfc') }}" class="pm-item">Ficha Cadastral</a>
+                <a href="{{ route('ficha.store') }}" class="pm-item">Ficha Cadastral</a>
 
                 <a href="" class="pm-item">Ficha Funcional</a>
             </div>

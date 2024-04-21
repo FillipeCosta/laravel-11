@@ -8,4 +8,6 @@ Route::get('/', [PainelController::class, 'Index'])->name(('index'));
 
 Route::post('/fichas', [FichaController::class, 'store'])->name('ficha.store');
 Route::get('/fichas', [FichaController::class, 'index'])->name('ficha.index');
-Route::get('/fichas/createfc', [FichaController::class, 'createFCadastro'])->name('ficha.createfc');
+
+
+Route::get('/form/profissionais', [FichaController::class, 'createFCadastro'])->name('prof.store');
