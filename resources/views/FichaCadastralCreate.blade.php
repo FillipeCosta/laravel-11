@@ -1,11 +1,11 @@
 @extends('template.main')
 
 @section('content')
-    <div class="container shadow ct-header">
+    {{-- <div class="container shadow ct-header">
         <span>
             <h2> Ficha Cadastral
         </span>
-    </div>
+    </div> --}}
 
     <div class="container ct-painel shadow">
         <div class="tab-content" id="nav-tabContent">

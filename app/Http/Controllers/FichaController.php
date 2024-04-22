@@ -10,11 +10,11 @@ class FichaController extends Controller
     public function index(){
         $cidades = DProfissionais::all();
 
-        return view('fCadastral', compact('cidades'));
+        return view('FichaCadastralCreate', compact('cidades'));
     }
 
     public function createFCadastro(){
-        return view('fCadastral');
+        return view('FichaCadastralCreate');
     }
 
     public function store(Request $request)
