@@ -6,303 +6,25 @@
             <h2> Ficha Cadastral
         </span>
     </div>
+    <div class="container ct-painel shadow">
+        <div class="tab-content" id="nav-tabContent">
 
-    <div class="container shadow">
 
-        <form class="needs-validation" novalidate action="{{ route('ficha.store') }}" method="POST">
-            @csrf
+            <x-tab-form-component></x-tab-form-component>
 
-            <div class="row shadow-sm ">
-                <legend class="mb-3">Dados Profissionais</legend>
-                <hr>
-                <form action="{{ route('prof.store') }}" method="POST" class="needs-validation" novalidate>
-                    @csrf()
-
-                    <div class="col-3  mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" required class="form-control" name="nome">
-                        <div class="invalid-feedback">
-                            Por favor, insira um nome.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="text" required class="form-control" name="email">
-                        <div class="invalid-feedback">
-                            Por favor, insira um endereço de email válido.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="matricula" class="form-label">Matrícula</label>
-                        <input type="text" required class="form-control" name="matricula">
-                        <div class="invalid-feedback">
-                            Por favor, insira uma matrícula.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="admissao" class="form-label">Data de Admissão</label>
-                        <input type="date" class="form-control" name="admissao" >
-                        <div class="invalid-feedback">
-                            Por favor, insira uma data de admissão.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="cargo" class="form-label">Cargo</label>
-                        <input type="text" required class="form-control" name="cargo">
-                        <div class="invalid-feedback">
-                            Por favor, insira um cargo.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="funcao" class="form-label">Função</label>
-                        <input type="text" required class="form-control" name="funcao">
-                        <div class="invalid-feedback">
-                            Por favor, insira uma função.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="salario_referencia" class="form-label">Referência Salarial</label>
-                        <input type="text" required class="form-control" name="salario_referencia">
-                        <div class="invalid-feedback">
-                            Por favor, insira um Referência Salarial.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="carga_horaria_semanal" class="form-label">Carga Horária Semanal</label>
-                        <input type="number" class="form-control" name="carga_horaria_semanal" >
-                        <div class="invalid-feedback">
-                            Por favor, insira uma Carga Horária Semanal.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="basic-url" class="form-label"> Pessoa com Deficiência? </label>
-                        <select name="pcd" class="form-select" id="">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Por favor, insira uma pessoa com deficiência.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="reducao_carga_horaria" class="form-label">Redução Carga Horária</label>
-                        <input type="number" class="form-control" name="reducao_carga_horaria"
-                           >
-                        <div class="invalid-feedback">
-                            Por favor, insira uma redução de carga horária.
-                        </div>
-                    </div>
-
-                    <div class="col-3 mb-3">
-                        <label for="basic-url" class="form-label"> Readaptado? </label>
-                        <select name="readaptado" class="form-select" id="">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Por favor, insira uma pessoa com deficiência.
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success btn-sm"> Salvar </button>
-                </form>
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                <x-form-profissional />
             </div>
 
-            {{--
-            <div class="row shadow-sm">
-                <legend class="mb-3">Dados Pessoais</legend>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="data_nascimento" placeholder="Data de Nascimento">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="sexo" placeholder="Sexo">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="cor_raca" placeholder="Cor/Raça">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="nacionalidade" placeholder="Nacionalidade">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="uf_naturalidade"
-                            placeholder="UF de Naturalidade">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="naturalidade" placeholder="Naturalidade">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="ci_numero" placeholder="Número do RG">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="ci_orgao_emissor"
-                            placeholder="Órgão Emissor do RG">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="ci_uf" placeholder="UF do RG">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="ci_data_emissao"
-                            placeholder="Data de Emissão do RG">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="cpf" placeholder="CPF">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="pis_pasep" placeholder="PIS/PASEP">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="titulo_eleitoral_numero"
-                            placeholder="Título de Eleitor">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="zona_eleitoral" placeholder="Zona Eleitoral">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="secao_eleitoral" placeholder="Seção Eleitoral">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="estado_civil" placeholder="Estado Civil">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="nome_conjuge" placeholder="Nome do Cônjuge">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="nome_pai" placeholder="Nome do Pai">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="nome_mae" placeholder="Nome da Mãe">
-                    </div>
-                </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                <x-form-pessoal />
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="row shadow-sm">
-                <legend class="mb-3">Dados Residencias</legend>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="estado_id" placeholder="Estado">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="endereco" placeholder="Endereço">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="bairro" placeholder="Bairro">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="cidade" placeholder="Cidade">
-                    </div>
-                </div>
-
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="uf_residencia" placeholder="UF de Residência">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="cep" placeholder="CEP">
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="telefone_residencial"
-                            placeholder="Telefone Residencial">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="input-group ">
-                        <input type="text" required class="form-control" name="telefone_celular"
-                            placeholder="Telefone Celular">
-                    </div>
-                </div>
-
-
-                <div class="col-3">
-                    <div class="input-group">
-                        <input type="text" required class="form-control" name="telefone_comercial"
-                            placeholder="Telefone Comercial">
-                    </div>
-                </div>
-
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                <x-form-residencial />
             </div>
-            <div class="row shadow-sm">
+
+            {{-- <div class="row shadow-sm">
                 <legend class="mb-3">Unidade Primária</legend>
                 <!-- Carga Primária -->
                 <div class="col-3">
@@ -436,15 +158,15 @@
                             placeholder="Carga Horária">
                     </div>
                 </div>
-            </div> --}}
-            {{--
+            </div>
             <div class="row shadow-sm">
                 <div class="col-12">
                     <input type="submit" class="btn btn-primary" value="Enviar">
                 </div>
-            </div> --}}
-    </div>
-    </form>
+            </div>  --}}
+
+        </div>
+        </form>
 
     </div>
 @endsection
