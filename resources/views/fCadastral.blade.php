@@ -18,7 +18,7 @@
                 <form action="{{ route('prof.store') }}" method="POST" class="needs-validation" novalidate>
                     @csrf()
 
-                    <div class="col-3 mb-3">
+                    <div class="col-3  mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" required class="form-control" name="nome">
                         <div class="invalid-feedback">

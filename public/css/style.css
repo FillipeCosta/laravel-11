@@ -34,22 +34,11 @@ input{
     font-size: 1.9rem;
 }
 
- .row{
+.row{
     padding: 10px;
     border: 2px solid #d3d3d3;
     border-radius: 4px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.col-3{
-    padding: 0 !important;
-    margin: 4px !important;
-
-}
-
-.col-3 .btn{
-    width: 100% !important;
-    margin: 0 4px !important;
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
 }
