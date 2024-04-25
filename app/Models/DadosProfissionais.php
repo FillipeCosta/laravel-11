@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DProfissionais extends Model
+class DadosProfissionais extends Model
 {
     use HasFactory;
 
-    protected $table = 'tb_dprofissionais';
+    protected $table = 'DadosProfissionais';
 
     public $timestamps = false;
 
@@ -17,8 +17,10 @@ class DProfissionais extends Model
         'nome',
         'email',
         'matricula',
-        'admissao',
+        'dt_admissao',
         'funcao',
+        'nivel_ep',
+        'idRegime',
         'salario_referencia',
         'carga_horaria_semanal',
         'pcd',

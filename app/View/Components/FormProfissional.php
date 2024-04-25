@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Regime;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,10 @@ class FormProfissional extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.form-profissional');
+        $regime = Regime::all();
+
+
+
+        return view('components.form-profissional', compact('regime'));
     }
 }

@@ -1,10 +1,10 @@
-<form action="{{ route('prof.store') }}" method="POST" class="needs-validation" novalidate>
+<form action="{{ route('forms.prof.store') }}" method="POST" >
     @csrf()
     <div class="row shadow-sm">
         <legend class="mb-3"> <span class="number"> 1 </span> Dados Profissionais </legend>
         <hr>
 
-        <div class="col-3  mb-3">
+        {{-- <div class="col-3  mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" required class="form-control" name="nome">
             <div class="invalid-feedback">
@@ -18,7 +18,7 @@
             <div class="invalid-feedback">
                 Por favor, insira um endereço de email válido.
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-3 mb-3">
             <label for="matricula" class="form-label">Matrícula</label>
@@ -30,19 +30,19 @@
 
         <div class="col-3 mb-3">
             <label for="admissao" class="form-label">Data de Admissão</label>
-            <input type="date" class="form-control" name="admissao">
+            <input type="date" class="form-control" name="dt_admissao">
             <div class="invalid-feedback">
                 Por favor, insira uma data de admissão.
             </div>
         </div>
 
-        <div class="col-3 mb-3">
+        {{-- <div class="col-3 mb-3">
             <label for="cargo" class="form-label">Cargo</label>
             <input type="text" required class="form-control" name="cargo">
             <div class="invalid-feedback">
                 Por favor, insira um cargo.
             </div>
-        </div>
+        </div> --}}
 
         <div class="col-3 mb-3">
             <label for="funcao" class="form-label">Função</label>
@@ -51,6 +51,27 @@
                 Por favor, insira uma função.
             </div>
         </div>
+
+        <div class="col-3 mb-3">
+            <label for="funcao" class="form-label">Nivel E.P</label>
+            <input type="text" required class="form-control" name="nivel_ep">
+            <div class="invalid-feedback">
+                Por favor, insira uma função.
+            </div>
+        </div>
+
+        <div class="col-3 mb-3">
+            <label for="basic-url" class="form-label"> Regime </label>
+            <select name="idRegime" class="form-select" id="">
+                @foreach ($regime as $r)
+                    <option value="{{ $r->id }}">{{ $r->periodo }}</option>
+                @endforeach
+            </select>
+            <div class="invalid-feedback">
+                Por favor, insira um regime.
+            </div>
+        </div>
+
 
         <div class="col-3 mb-3">
             <label for="salario_referencia" class="form-label">Referência Salarial</label>
@@ -97,6 +118,37 @@
                 Por favor, insira uma pessoa com deficiência.
             </div>
         </div>
-        <button type="submit" class="btn btn-success btn-sm" onclick="navigateTabs('profile')"> Salvar </button>
-    </div>
+
+        <hr>
+{{--
+        <h3>Lotação</h3>
+
+        <div class="col-3 mb-3">
+            <label for="admissao" class="form-label">Lotado na CREC em:</label>
+            <input type="date" class="form-control" name="admissao">
+            <div class="invalid-feedback">
+                Por favor, insira uma data de Lotação.
+            </div>
+        </div>
+
+        <div class="col-3 mb-3">
+            <label for="basic-url" class="form-label"> Lotação </label>
+            <select name="lotacao" class="form-select" id="">
+                <option value="1">Definitiva</option>
+                <option value="2">Provisória</option>
+                <option value="3">Ex-Ofício</option>
+                <option value="4">Professor Subistituto</option>
+                <option value="5">Estagiário</option>
+            </select>
+            <div class="invalid-feedback">
+                Por favor, insira uma lotação.
+            </div>
+        </div> --}}
+
+
+
+
+        {{-- <button class="btn btn-primary" onclick="activateTab('nav-carga-tab')">Abrir Perfil Profissional</button> --}}
 </form>
+
+</div>

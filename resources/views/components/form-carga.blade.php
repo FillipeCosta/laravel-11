@@ -1,74 +1,77 @@
-<form action="{{ route('prof.store') }}" method="POST" class="needs-validation" novalidate>
+<form action="{{ route('forms.unid.store') }}" method="POST" class="needs-validation" novalidate>
     @csrf()
     <div class="row shadow-sm">
-        <legend class="mb-3">Unidade Primária</legend>
-        <!-- Carga Primária -->
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="unidade_primaria"
-                    placeholder="Unidade (Primária)">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="cre_unidade_administrativa_primaria"
-                    placeholder="CRE Unidade Administrativa (Primária)">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="lotacao_unidade_primaria"
-                    placeholder="Lotação Unidade (Primária)">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="turno_primario"
-                    placeholder="Turno (Primário)">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="atuacao_primaria"
-                    placeholder="Atuação (Primária)">
-            </div>
+
+        <legend class="mb-3"> <span class="number"> 4 </span> Unidade Primária </legend>
+        <!-- Campo Unidade Primária -->
+        <div class="col-3 mb-3">
+            <label for="unidade_primaria" class="form-label">Unidade (Primária)</label>
+            <input type="text" required class="form-control" id="unidade_primaria" name="unidade_primaria">
         </div>
 
+        <!-- Campo CRE Unidade Administrativa Primária -->
+        <div class="col-3 mb-3">
+            <label for="cre_unidade_administrativa_primaria" class="form-label">CRE Unidade Administrativa
+                (Primária)</label>
+            <input type="text" required class="form-control" id="cre_unidade_administrativa_primaria"
+                name="cre_unidade_administrativa_primaria">
+        </div>
+
+        <!-- Campo Lotação Unidade Primária -->
+        <div class="col-3 mb-3">
+            <label for="lotacao_unidade_primaria" class="form-label">Lotação Unidade (Primária)</label>
+            <input type="text" required class="form-control" id="lotacao_unidade_primaria"
+                name="lotacao_unidade_primaria">
+        </div>
+
+        <!-- Campo Turno Primário -->
+        <div class="col-3 mb-3">
+            <label for="turno_primario" class="form-label">Turno (Primário)</label>
+            <input type="text" required class="form-control" id="turno_primario" name="turno_primario">
+        </div>
+
+        <!-- Campo Atuação Primária -->
+        <div class="col-3 mb-3">
+            <label for="atuacao_primaria" class="form-label">Atuação (Primária)</label>
+            <input type="text" required class="form-control" id="atuacao_primaria" name="atuacao_primaria">
+        </div>
     </div>
+
     <div class="row shadow-sm">
-        <legend class="mb-3">Unidade Secundária</legend>
-        <!-- Carga Secundária -->
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="unidade_secundaria"
-                    placeholder="Unidade (Secundária)">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="cre_unidade_administrativa_secundaria"
-                    placeholder="CRE Unidade Administrativa (Secundária)">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="lotacao_unidade_secundaria"
-                    placeholder="Lotação Unidade (Secundária)">
-            </div>
+        <legend class="mb-3"> <span class="number"> 5 </span> Unidade Secundária </legend>
+        <!-- Campo Unidade Secundária -->
+        <div class="col-3 mb-3">
+            <label for="unidade_secundaria" class="form-label">Unidade (Secundária)</label>
+            <input type="text" required class="form-control" id="unidade_secundaria" name="unidade_secundaria">
         </div>
 
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="turno_secundario"
-                    placeholder="Turno (Secundário)">
-            </div>
+        <!-- Campo CRE Unidade Administrativa Secundária -->
+        <div class="col-3 mb-3">
+            <label for="cre_unidade_administrativa_secundaria" class="form-label">CRE Unidade Administrativa
+                (Secundária)</label>
+            <input type="text" required class="form-control" id="cre_unidade_administrativa_secundaria"
+                name="cre_unidade_administrativa_secundaria">
         </div>
 
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="atuacao_secundaria"
-                    placeholder="Atuação (Secundária)">
-            </div>
+        <!-- Campo Lotação Unidade Secundária -->
+        <div class="col-3 mb-3">
+            <label for="lotacao_unidade_secundaria" class="form-label">Lotação Unidade (Secundária)</label>
+            <input type="text" required class="form-control" id="lotacao_unidade_secundaria"
+                name="lotacao_unidade_secundaria">
+        </div>
+
+        <!-- Campo Turno Secundário -->
+        <div class="col-3 mb-3">
+            <label for="turno_secundario" class="form-label">Turno (Secundário)</label>
+            <input type="text" required class="form-control" id="turno_secundario" name="turno_secundario">
+        </div>
+
+        <!-- Campo Atuação Secundária -->
+        <div class="col-3 mb-3">
+            <label for="atuacao_secundaria" class="form-label">Atuação (Secundária)</label>
+            <input type="text" required class="form-control" id="atuacao_secundaria" name="atuacao_secundaria">
         </div>
     </div>
+    <div class="btn btn-success" type="submit"> Enviar </div>
+
 </form>

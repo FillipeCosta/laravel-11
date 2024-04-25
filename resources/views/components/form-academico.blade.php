@@ -1,73 +1,79 @@
-<form action="{{ route('prof.store') }}" method="POST" class="needs-validation" novalidate>
+<form action="{{ route('forms.acad.store') }}" method="POST" class="needs-validation" novalidate>
     @csrf()
     <div class="row shadow-sm">
-        <legend class="mb-3">Cadastrados no SIGRH</legend>
-        <!-- Especialidades e Cursos -->
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="especialidade_disciplina_curso"
-                    placeholder="Especialidade/Disciplina/Curso">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="especialidade_referencia_salarial"
-                    placeholder="Especialidade Referência Salarial">
-            </div>
-        </div>
-        <div class="col-3-8">
-            <div class="input-group">
-                <textarea class="form-control" name="habilitacoes_cadastradas_sigrh" col-3s="30" row shadow-sms="3"
-                    placeholder="Habilitações Cadastradas no SIGRH"></textarea>
-            </div>
-        </div>
-        <div class="col-3-8">
-            <div class="input-group">
-                <textarea class="form-control" name="composicao_curricular_habilitacao_aptidao" col-3s="30" row shadow-sms="3"
-                    placeholder="Composição Curricular e Habilitações/Aptidões Autorizadas"></textarea>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="curso_nome" placeholder="Nome do Curso">
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="curso_instituicao" placeholder="Instituição">
-            </div>
+        <legend class="mb-3"> <span class="number"> 6 </span> SIGRH </legend>
+        <!-- Especialidade/Disciplina/Curso -->
+        <div class="col-3 mb-3">
+            <label for="especialidade_disciplina_curso" class="form-label">Especialidade/Disciplina/Curso</label>
+            <input type="text" required class="form-control" id="especialidade_disciplina_curso"
+                name="especialidade_disciplina_curso">
         </div>
 
+        <!-- Especialidade Referência Salarial -->
+        <div class="col-3 mb-3">
+            <label for="especialidade_referencia_salarial" class="form-label">Especialidade Referência Salarial</label>
+            <input type="text" required class="form-control" id="especialidade_referencia_salarial"
+                name="especialidade_referencia_salarial">
+        </div>
+
+        <!-- Habilitações Cadastradas no SIGRH -->
+        <div class="col-3 mb-3">
+            <label for="habilitacoes_cadastradas_sigrh" class="form-label">Habilitações Cadastradas no SIGRH</label>
+            <textarea class="form-control" id="habilitacoes_cadastradas_sigrh" name="habilitacoes_cadastradas_sigrh" rows="3"></textarea>
+        </div>
+
+        <!-- Composição Curricular e Habilitações/Aptidões Autorizadas -->
+        <div class="col-3 mb-3">
+            <label for="composicao_curricular_habilitacao_aptidao" class="form-label">Composição Curricular e
+                Habilitações</label>
+            <textarea class="form-control" id="composicao_curricular_habilitacao_aptidao"
+                name="composicao_curricular_habilitacao_aptidao" rows="3"></textarea>
+        </div>
+
+        <!-- Nome do Curso -->
+        <div class="col-3 mb-3">
+            <label for="curso_nome" class="form-label">Nome do Curso</label>
+            <input type="text" required class="form-control" id="curso_nome" name="curso_nome">
+        </div>
+
+        <!-- Instituição -->
+        <div class="col-3 mb-3">
+            <label for="curso_instituicao" class="form-label">Instituição</label>
+            <input type="text" required class="form-control" id="curso_instituicao" name="curso_instituicao">
+        </div>
     </div>
+
     <div class="row shadow-sm">
-        <legend class="mb-3">Acadêmicos</legend>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="curso_data_emissao"
-                    placeholder="Data de Emissão">
-            </div>
+        <legend class="mb-3"> <span class="number"> 7 </span> Acadêmicos </legend>
+        <!-- Data de Emissão -->
+        <div class="col-3 mb-3">
+            <label for="curso_data_emissao" class="form-label">Data de Emissão</label>
+            <input type="text" required class="form-control" id="curso_data_emissao" name="curso_data_emissao">
         </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="curso_utilizacao"
-                    placeholder="Utilização do Curso">
-            </div>
+
+        <!-- Utilização do Curso -->
+        <div class="col-3 mb-3">
+            <label for="curso_utilizacao" class="form-label">Utilização do Curso</label>
+            <input type="text" required class="form-control" id="curso_utilizacao" name="curso_utilizacao">
         </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="curso_data" placeholder="Data de Conclusão">
-            </div>
+
+        <!-- Data de Conclusão -->
+        <div class="col-3 mb-3">
+            <label for="curso_data" class="form-label">Data de Conclusão</label>
+            <input type="text" required class="form-control" id="curso_data" name="curso_data">
         </div>
-        <div class="col-3">
-            <div class="input-group">
-                <input type="text" required class="form-control" name="curso_carga_horaria"
-                    placeholder="Carga Horária">
-            </div>
+
+        <!-- Carga Horária -->
+        <div class="col-3 mb-3">
+            <label for="curso_carga_horaria" class="form-label">Carga Horária</label>
+            <input type="text" required class="form-control" id="curso_carga_horaria" name="curso_carga_horaria">
         </div>
     </div>
+
     <div class="row shadow-sm">
         <div class="col-12">
             <input type="submit" class="btn btn-primary" value="Enviar">
         </div>
     </div>
+    <div class="btn btn-success" type="submit"> Enviar </div>
 </form>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href=" {{ asset('css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
@@ -19,16 +20,49 @@
 
 <style>
     body {
-        background-color: #d3d3d3;
+        background-color: #EEEEEE;
     }
 </style>
 
 <body>
+    <div id="wrapper" class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="border-end bg-white">
+            <div class="sidebar-heading border-bottom bg-light"><img src="{{ asset('img/logo-semfundo.png')}}" alt="" style="width: 41px"> <strong> ATHENA </strong></div>
+            <div class="list-group list-group-flush">
+                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
+                {{-- <a href="{{ route('forms.') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.index') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Painel </a> --}}
+                <a href="{{ route('forms.index') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.cadastral') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Formulários</a>
+                {{-- <a href="{{ route('forms.list', ['id' => Auth::user()->id]) }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.list') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Blibioteca</a> --}}
 
-    <main>
-        @yield('content')
-    </main>
 
+                {{-- <a href="{{ route('forms.list')}}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms') ? 'active' : '' }}"><i class="bi bi-clipboard-check-fill"></i> Lista de Fichas</a> --}}
+            </div>
+        </div>
+        <!-- Page content wrapper -->
+        <div id="page-content-wrapper">
+            <!-- Top navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid d-flex justify-content-end">
+                    {{-- <button id="sidebarToggle" class="btn btn-primary">Toggle Menu</button> --}}
+
+                    {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button> --}}
+
+                    <div class="p-3" style="margin-bottom: 0" >Olá, <strong>{{ Auth::user()->name }}</strong></div>
+                </div>
+            </nav>
+            <!-- Page content -->
+            <div class="container-fluid">
+                <main>
+                    @yield('content')
+                </main>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
@@ -55,6 +89,28 @@
 
 
 
+    //
+    // Scripts
+    //
+
+    window.addEventListener('DOMContentLoaded', event => {
+
+        // Toggle the side navigation
+        const sidebarToggle = document.body.querySelector('#sidebarToggle');
+        if (sidebarToggle) {
+            // Uncomment Below to persist sidebar toggle between refreshes
+            // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+            //     document.body.classList.toggle('sb-sidenav-toggled');
+            // }
+            sidebarToggle.addEventListener('click', event => {
+                event.preventDefault();
+                document.body.classList.toggle('sb-sidenav-toggled');
+                localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains(
+                    'sb-sidenav-toggled'));
+            });
+        }
+
+    });
 </script>
 
 </html>
