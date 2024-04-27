@@ -4,6 +4,32 @@
         <legend class="mb-3"> <span class="number"> 2 </span> Dados Pessoais </legend>
         <hr>
 
+        <div class="col-3  mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" required class="form-control" name="nome">
+            <div class="invalid-feedback">
+                Por favor, insira um nome.
+            </div>
+        </div>
+
+
+        <div class="col-3  mb-3">
+            <label for="apelido" class="form-label">Apelido</label>
+            <input type="text" required class="form-control" name="apelido">
+            <div class="invalid-feedback">
+                Por favor, insira um apelido.
+            </div>
+        </div>
+
+
+        <div class="col-3 mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" required class="form-control" name="email">
+            <div class="invalid-feedback">
+                Por favor, insira um endereço de email válido.
+            </div>
+        </div>
+
         <!-- Campo Data de Nascimento -->
         <div class="col-3 mb-3">
             <label for="data_nascimento" class="form-label">Data de Nascimento</label>
