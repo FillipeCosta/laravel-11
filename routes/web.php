@@ -12,14 +12,9 @@ Route::get('/', function () {
     return view('forms/forms');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
     Route::post('forms/prof/store',[DadosProfissionaisController::class, 'store'])->name('forms.prof.store');
     Route::post('forms/pess/store',[DadosPessoaisController::class, 'store'])->name('forms.pess.store');
@@ -31,6 +26,4 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/forms/list/{id}', [DadosProfissionaisController::class, 'list'])->name('forms.list');
     Route::get('/forms/painel/cadastral', [DadosProfissionaisController::class, 'index'])->name('forms.cadastral');
-});
 
-require __DIR__.'/auth.php';

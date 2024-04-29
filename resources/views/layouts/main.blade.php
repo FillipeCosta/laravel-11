@@ -30,14 +30,9 @@
         <div id="sidebar-wrapper" class="border-end bg-white">
             <div class="sidebar-heading border-bottom bg-light"><img src="{{ asset('img/logo-semfundo.png')}}" alt="" style="width: 41px"> <strong> ATHENA </strong></div>
             <div class="list-group list-group-flush">
-                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
-                {{-- <a href="{{ route('forms.') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.index') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Painel </a> --}}
+                <a href="" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
                 <a href="{{ route('forms.index') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.cadastral') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Formulários</a>
-                {{-- <a href="{{ route('forms.list', ['id' => Auth::user()->id]) }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.list') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Blibioteca</a> --}}
-
-
-                {{-- <a href="{{ route('forms.list')}}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms') ? 'active' : '' }}"><i class="bi bi-clipboard-check-fill"></i> Lista de Fichas</a> --}}
-            </div>
+           </div>
         </div>
         <!-- Page content wrapper -->
         <div id="page-content-wrapper">
@@ -52,7 +47,7 @@
                     <span class="navbar-toggler-icon"></span>
                     </button> --}}
 
-                    <div class="p-3" style="margin-bottom: 0" >Olá, <strong>{{ Auth::user()->name }}</strong></div>
+
                 </div>
             </nav>
             <!-- Page content -->
