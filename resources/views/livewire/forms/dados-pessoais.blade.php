@@ -1,4 +1,5 @@
 <div>
+    @livewire('alerts')
     <form wire:submit="store">
         <div class="row shadow-sm">
             <legend class="mb-3"> <span class="number"> 2 </span> Dados Pessoais </legend>
@@ -13,18 +14,14 @@
             <div class="col-3  mb-3">
                 <label for="apelido" class="form-label">Apelido</label>
                 <input type="text"  class="form-control" name="apelido">
-                <div class="invalid-feedback">
-                    Por favor, insira um apelido.
-                </div>
+                @error('apelido') <span class="invalid-feedback">{{ $message }}</span> @enderror
             </div>
 
 
             <div class="col-3 mb-3">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" name="email">
-                <div class="invalid-feedback">
-                    Por favor, insira um endereço de email válido.
-                </div>
+                <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" wire:model="email">
+                @error('email') <span class="invalid-feedback">{{ $message }}</span> @enderror
             </div>
 
             <!-- Campo Data de Nascimento -->
@@ -87,7 +84,7 @@
             <!-- Campo Número do RG -->
             <div class="col-3 mb-3">
                 <label for="ci_numero" class="form-label">Número do RG</label>
-                <input type="text" class="form-control" id="ci_numero" name="ci_numero">
+                <input type="text" class="form-control" id="rg_numero" name="rg_numero">
                 <div class="invalid-feedback">
                     Por favor, insira um nome.
                 </div>
@@ -95,8 +92,8 @@
 
             <!-- Campo Órgão Emissor do RG -->
             <div class="col-3 mb-3">
-                <label for="ci_orgao_emissor" class="form-label">Órgão Emissor do RG</label>
-                <input type="text" class="form-control" id="ci_orgao_emissor" name="ci_orgao_emissor">
+                <label for="rg_orgao_emissor" class="form-label">Órgão Emissor do RG</label>
+                <input type="text" class="form-control" id="rg_orgao_emissor" name="rg_orgao_emissor">
                 <div class="invalid-feedback">
                     Por favor, insira um nome.
                 </div>
@@ -104,8 +101,8 @@
 
             <!-- Campo UF do RG -->
             <div class="col-3 mb-3">
-                <label for="ci_uf" class="form-label">UF do RG</label>
-                <input type="text" class="form-control" id="ci_uf" name="ci_uf">
+                <label for="rg_uf" class="form-label">UF do RG</label>
+                <input type="text" class="form-control" id="rg_uf" name="rg_uf">
                 <div class="invalid-feedback">
                     Por favor, insira um nome.
                 </div>
@@ -113,8 +110,8 @@
 
             <!-- Campo Data de Emissão do RG -->
             <div class="col-3 mb-3">
-                <label for="ci_data_emissao" class="form-label">Data de Emissão do RG</label>
-                <input type="date" class="form-control" id="ci_data_emissao" name="ci_data_emissao">
+                <label for="rg_data_emissao" class="form-label">Data de Emissão do RG</label>
+                <input type="date" class="form-control" id="rg_data_emissao" name="rg_data_emissao">
                 <div class="invalid-feedback">
                     Por favor, insira um nome.
                 </div>

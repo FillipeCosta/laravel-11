@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use Livewire\Attributes\Validate;
+use Livewire\Attributes\Validate; // PRECISA SER IMPORTADO PARA VALIDAÇÃO FUNCIONAR
 use Livewire\Component;
 use App\Models\Teste;
 class Testes extends Component

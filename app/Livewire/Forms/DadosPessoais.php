@@ -2,66 +2,43 @@
 
 namespace App\Livewire\Forms;
 
+use Livewire\Attributes\Validate; // PRECISA SER IMPORTADO PARA VALIDAÇÃO FUNCIONAR
 use Livewire\Component;
 use App\Models\Pessoa;
 
 class DadosPessoais extends Component
 {
-    public $nome;
+
     public $apelido;
+    #[Validate('required')]
     public $email;
-    public $dataDeNascimento; // dd/mm/aaaa
+    public $data_nascimento;
     public $sexo;
-    public $corRaca;
+    public $cor_raca;
     public $nacionalidade;
-    public $ufDeNaturalidade;
+    public $uf_naturalidade;
     public $naturalidade;
-    public $numeroDoRG;
-    public $orgaoEmissorDoRG;
-    public $ufDoRG;
-    public $dataDeEmissaoDoRG; // dd/mm/aaaa
+    public $rg_numero;
+    public $rg_orgao_emissor;
+    public $rg_uf;
+    public $rg_data_emissao;
     public $cpf;
-    public $pisPasep;
-    public $tituloDeEleitor;
-    public $zonaEleitoral;
-    public $secaoEleitoral;
-    public $estadoCivil;
-    public $nomeDoConjuge;
-    public $nomeDoPai;
-    public $nomeDaMae;
+    public $pis_pasep;
+    public $titulo_eleitoral_numero;
+    public $zona_eleitoral;
+    public $secao_eleitoral;
+    public $estado_civil;
+    public $nome_conjuge;
+    public $nome_pai;
+    public $nome_mae;
 
-    public function store(){
+    public function store()
+    {
+        $this->validate();
 
-        $validatedData = $this->validate([
-            'nome' => 'required|string|max:255',
-            'apelido' => 'nullable|string|max:255',
-            'email' => 'required|email',
-            'dataDeNascimento' => 'required|date_format:d/m/Y',
-            'sexo' => 'required',
-            'corRaca' => 'required',
-            'nacionalidade' => 'required',
-            'ufDeNaturalidade' => 'required',
-            'naturalidade' => 'required',
-            'numeroDoRG' => 'required',
-            'orgaoEmissorDoRG' => 'required',
-            'ufDoRG' => 'required',
-            'dataDeEmissaoDoRG' => 'required|date_format:d/m/Y',
-            'cpf' => 'required|digits:11',
-            'pisPasep' => 'nullable|digits_between:10,11',
-            'tituloDeEleitor' => 'nullable|digits_between:10,12',
-            'zonaEleitoral' => 'nullable|numeric',
-            'secaoEleitoral' => 'nullable|numeric',
-            'estadoCivil' => 'required',
-            'nomeDoConjuge' => 'nullable|string|max:255',
-            'nomeDoPai' => 'nullable|string|max:255',
-            'nomeDaMae' => 'required|string|max:255'
-        ]);
-
-        Pessoa::create($validatedData);
-        // Post::create($this->all());
+        Pessoa::create($this->all());
 
         session()->flash('message', 'Registro realizado com sucesso!');
-
     }
 
     public function render()

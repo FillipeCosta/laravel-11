@@ -6,8 +6,8 @@
         {{-- Menus tabs --}}
     </div>
 
-
-        @livewire('testes')
+{{--
+        @livewire('testes') --}}
 
 
     <div class="container ct-painel">

@@ -14,25 +14,27 @@ class Pessoa extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'data_de_nascimento',
-        'sexo',
+        'apelido',
+        'email',
+        'data_nascimento',
+        'sexo' , // Assuming 'M' for male, 'F' for female
         'cor_raca',
         'nacionalidade',
-        'uf_de_naturalidade',
-        'naturalidade',
-        'numero_do_rg',
-        'orgao_emissor_do_rg',
-        'uf_do_rg',
-        'data_de_emissao_do_rg',
+        'uf_naturalidade' ,
+        'naturalidade' ,
+        'ci_numero' ,
+        'ci_orgao_emissor' ,
+        'ci_uf',
+        'ci_data_emissao',
         'cpf',
         'pis_pasep',
-        'titulo_de_eleitor',
+        'titulo_eleitoral_numero',
         'zona_eleitoral',
         'secao_eleitoral',
         'estado_civil',
-        'nome_do_conjuge',
-        'nome_do_pai',
-        'nome_da_mae',
+        'nome_conjuge',
+        'nome_pai',
+        'nome_mae'
     ];
 
 }
