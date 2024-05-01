@@ -1,4 +1,4 @@
-<form action="{{ route('forms.acad.store') }}" method="POST" class="needs-validation" novalidate>
+<form  method="POST" class="needs-validation" novalidate>
     @csrf()
     <div class="row shadow-sm">
         <legend class="mb-3"> <span class="number"> 6 </span> SIGRH </legend>

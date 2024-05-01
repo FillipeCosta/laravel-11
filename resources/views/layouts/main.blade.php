@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
             <div class="sidebar-heading border-bottom bg-light"><img src="{{ asset('img/logo-semfundo.png')}}" alt="" style="width: 41px"> <strong> ATHENA </strong></div>
             <div class="list-group list-group-flush">
                 <a href="" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
-                <a href="{{ route('forms.index') }}" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.cadastral') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Formulários</a>
+                <a href="" class="list-group-item list-group-item-action list-group-item-light p-3 {{ request()->routeIs('forms.cadastral') ? 'active' : '' }}"><i class="bi bi-clipboard-data-fill"></i> Formulários</a>
            </div>
         </div>
         <!-- Page content wrapper -->
@@ -46,8 +46,6 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button> --}}
-
-
                 </div>
             </nav>
             <!-- Page content -->

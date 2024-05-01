@@ -1,4 +1,4 @@
-<form action="{{ route('forms.prof.store') }}" method="POST" >
+<form  method="POST" >
     @csrf()
     <div class="row shadow-sm">
         <legend class="mb-3"> <span class="number"> 1 </span> Dados Profissionais </legend>

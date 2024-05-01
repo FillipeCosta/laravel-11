@@ -3,12 +3,7 @@
 @section('content')
     <div class="container" id="cont-menu">
         <x-tab-form-component></x-tab-form-component>
-        {{-- Menus tabs --}}
     </div>
-
-{{--
-        @livewire('testes') --}}
-
 
     <div class="container ct-painel">
         <div class="tab-content" id="nav-tabContent">
@@ -22,7 +17,7 @@
             </div>
 
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                <x-form-residencial />
+                @livewire('forms.enderecos')
             </div>
 
             <div class="tab-pane fade" id="nav-carga" role="tabpanel" aria-labelledby="nav-carga-tab" tabindex="0">
@@ -34,7 +29,5 @@
                 <x-form-academico />
             </div>
         </div>
-
-
     </div>
 @endsection

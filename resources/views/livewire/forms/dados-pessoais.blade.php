@@ -1,5 +1,5 @@
 <div>
-    @livewire('alerts')
+
     <form wire:submit="store">
         <div class="row shadow-sm">
             <legend class="mb-3"> <span class="number"> 2 </span> Dados Pessoais </legend>
